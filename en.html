@@ -42,7 +42,7 @@
 <div class="note">
 <ul>
 <li><strong>Everything you record stays on your phone.</strong> Videos (no sound), athletes and results are stored on the device. We run no servers, never see your data, and the app contains no advertising, analytics or tracking.</li>
-<li><strong>Only you can move data off the phone:</strong> Android's backup of the app data to your Google account (if enabled), your photo app's cloud sync of the videos, and files you export or share. Two things happen automatically once you set them up: the app asks Google Play about Pro at every start, and a connected finish phone sends its videos to the start phone.</li>
+<li><strong>Nothing leaves the phone except:</strong> Android's backup of the app data to your Google account (if enabled), your photo app's cloud sync of the videos, files you export or share, the Pro check with Google Play at every start, and the two-phone transfer you set up (a connected finish phone sends its videos to the start phone).</li>
 <li><strong>Two-phone timing</strong> sends the finish video directly to your second phone — never through the internet or a server.</li>
 <li><strong>Google Play</strong> is contacted only to check or process the optional Pro purchase.</li>
 <li><strong>You are responsible</strong> for consent from the people you film — for under-18s from a parent or guardian.</li>
@@ -75,7 +75,7 @@ to grant and verify the licence — Art. 6(1)(b) GDPR — for as long as Google 
 <tr><td>Athlete data</td><td>Name, body weight (optional), team (with colour, default distance and free-text notes), start type, favourite track, block settings, leading foot; for athletes created in earlier versions also height and shoe size (no longer asked, kept until you edit them)</td><td>Assigning runs; computing force and impulse (weight)</td><td>Consent, Art. 6(1)(a); body weight is health data, Art. 9(2)(a) GDPR</td></tr>
 <tr><td>Video recordings</td><td>Start and finish videos (people visible; no audio — the app does not use the microphone)</td><td>Frame-by-frame analysis of start, strides and finish crossing</td><td>Typically consent, Art. 6(1)(a) GDPR (for club members possibly Art. 6(1)(b)/(f) — you decide as controller)</td></tr>
 <tr><td>Analysis/measurement data</td><td>Time points, velocities, forces, stride data, the tracked body points of each run (hip, shoulder, foot, centre of mass), calibration and camera tilt, race distance, optional camera position, recording time, video file names and the name of the finish phone</td><td>Displaying, storing and exporting the analysis</td><td>As for the video recordings</td></tr>
-<tr><td>Device settings</td><td>App configuration, the name of this phone (model, or a name you set), pairing code, Pro purchase status, free-run counter</td><td>App functionality</td><td>Stored on the phone; the name of this phone is sent to your second phone and stored there with each run, and it and the pairing code are included in Android's backup (Section 5). Concerns only you as the user — no legal basis towards third parties required (purchase status: Section 6)</td></tr>
+<tr><td>Device settings</td><td>App configuration, the name of this phone (model, or a name you set), pairing code, Pro purchase status, free-run counter</td><td>App functionality</td><td>Stored on the phone; the name of this phone is sent to your second phone, the start phone stores the finish phone's name with each run, and the name and the pairing code are included in Android's backup (Section 5). Concerns only you as the user — no legal basis towards third parties required (purchase status: Section 6)</td></tr>
 </tbody>
 </table>
 <p>Body weight is optional; without it only the mass-dependent values (force, impulse) are unavailable.
@@ -87,7 +87,7 @@ requested but remains stored with those athletes and runs until you edit or dele
 Videos are saved to the phone's gallery (folder <em>Movies/StartForce</em>) so that you can view and manage
 them like any other video. The pose detection (MediaPipe) runs entirely offline on the device.
 The app also keeps its diagnostic logs, finish videos waiting to be transferred and copies of your exports (for up to
-24 hours) in its private storage; on Android 9 and older the videos go to the phone's general video folder instead of
+24 hours) in its private storage; on Android 8 and 9 the videos go to the phone's general video folder instead of
 <em>Movies/StartForce</em>. There is <strong>no storage on servers of the developer</strong>.</p>
 
 <h2>5. What can leave the phone</h2>
@@ -108,16 +108,18 @@ Google provides the backup as part of your Google account under its own terms; t
 <li><strong>Your exports.</strong> PDF reports, raw-data CSV files, the app's backup archive
 (Settings → Backup &amp; Restore) and the diagnostic logs (Help → Crash Log / Sync Log; the sync log may
 contain the local IP address of your second phone) are handed to the app you pick in the Android share sheet.
-From there, what happens to them is up to you. PDF and CSV file names contain the athlete's name. Exported files
-are not encrypted by the app — store and share them accordingly.</li>
+From there, what happens to them is up to you. PDF reports contain the athletes' names, and the CSV file name (and
+the file name of a single-athlete PDF) carries the athlete's name. Exported files are not encrypted by the app — store
+and share them accordingly.</li>
 <li><strong>Two-phone finish timing.</strong> The finish video and the details needed to match it (run number,
 race distance, timing signals and the name of each phone — the phone model, or the name you set under Settings →
-Name of this phone; no athlete names) are sent directly from one
+Two-Phone Finish → Name of this phone; no athlete names) are sent directly from one
 phone to the other, either over a Wi-Fi Direct link or over a local Wi-Fi network both phones are joined to.
-No server and no third party is involved. While a session is active the app announces itself on the local network
-(service name, port and a random session token) so the other phone can find it. The other phone stores your phone's
-name with each run, so it also ends up in that phone's backup, and the finish phone keeps its own copy of every
-finish video in its gallery. Over Wi-Fi Direct the link is encrypted by Android (WPA2); over a
+No server and no third party is involved. While a session is active the start phone announces itself (service name,
+port and a random session token) on the Wi-Fi network or, over the direct link, to phones in radio range, so the finish
+phone can find it. The start phone stores the finish phone's name with each run, so it ends up in the start phone's
+backup; the finish phone keeps its own copy of every finish video in its gallery. Over Wi-Fi Direct the link is
+encrypted by Android (WPA2); over a
 shared Wi-Fi network the app adds no encryption of its own, so the data is only as protected as that
 network — avoid open or public networks. An optional pairing code (Settings) ensures that only phones
 with the same code can connect — without one, any phone running this app on the same network can; the code itself
@@ -127,7 +129,8 @@ is never transmitted in clear text.</li>
 <h2>6. Google Play (optional Pro purchase)</h2>
 <p>Pro is a one-time purchase processed by <strong>Google Play</strong> (in the EEA: Google Commerce Ltd. / Google
 Ireland Ltd.; see the Google Play Terms) and tied to the Google account on the phone. Each time the app starts,
-and when you tap Buy or Restore purchase on the purchase screen, it asks Google Play whether Pro is unlocked; for this the app needs internet access. Google sees the purchase and
+it asks Google Play whether Pro is unlocked and for the current price; Restore purchase asks again, and Buy opens
+Google Play's purchase flow; for this the app needs internet access. Google sees the purchase and
 your Google account — never your recordings, athletes or results. Payment data is handled exclusively by
 Google under <a href="https://policies.google.com/privacy">Google's privacy policy</a>; the developer receives
 no payment details. The purchase status is stored locally on the phone. Your three free runs are counted on the phone only; that counter and the purchase status are excluded from the backup.</p>
@@ -167,7 +170,7 @@ recorded, Section 9 applies.</p>
 <p>You decide how long data is kept. To remove everything: (1) delete runs, athletes and teams in the app;
 (2) delete the videos in the gallery (<em>Movies/StartForce</em>); (3) delete any PDF, CSV or backup files you
 exported; (4) if Android backup was on, delete the app's backup copy in Google One / Drive → Backups; (5) if you used a second
-phone as finish camera, delete the finish videos there too (its gallery and the app's pending-transfer list).
+phone as finish camera, delete the finish videos there too (its gallery and Finish Camera → Waiting to send).
 Uninstalling the app deletes its database and settings from the phone, but not the videos in the gallery,
 the exported files or the Google backup copy.</p>
 

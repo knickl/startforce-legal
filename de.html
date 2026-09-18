@@ -41,7 +41,7 @@
 <div class="note">
 <ul>
 <li><strong>Alles, was du aufnimmst, bleibt auf deinem Handy.</strong> Videos (ohne Ton), Athleten und Ergebnisse werden auf dem Gerät gespeichert. Wir betreiben keine Server, sehen deine Daten nie, und die App enthält keine Werbung, keine Analyse- und keine Tracking-Dienste.</li>
-<li><strong>Nur du kannst Daten vom Handy wegbewegen:</strong> die Android-Sicherung der App-Daten in dein Google-Konto (falls aktiviert), die Cloud-Synchronisation deiner Foto-App für die Videos und Dateien, die du exportierst oder teilst. Zwei Dinge passieren automatisch, sobald du sie eingerichtet hast: Die App fragt bei jedem Start Google Play nach Pro, und ein verbundenes Ziel-Handy schickt seine Videos an das Start-Handy.</li>
+<li><strong>Nichts verlässt das Handy außer:</strong> die Android-Sicherung der App-Daten in dein Google-Konto (falls aktiviert), die Cloud-Synchronisation deiner Foto-App für die Videos, Dateien, die du exportierst oder teilst, die Pro-Abfrage bei Google Play bei jedem Start und die von dir eingerichtete Zwei-Handy-Übertragung (ein verbundenes Ziel-Handy schickt seine Videos an das Start-Handy).</li>
 <li><strong>Die Zwei-Handy-Zeitmessung</strong> schickt das Zielvideo direkt an dein zweites Handy — nie über das Internet oder einen Server.</li>
 <li><strong>Google Play</strong> wird nur kontaktiert, um den optionalen Pro-Kauf zu prüfen oder abzuwickeln.</li>
 <li><strong>Du bist verantwortlich</strong> für die Einwilligung der gefilmten Personen — bei unter 18-Jährigen von einem Elternteil bzw. Erziehungsberechtigten.</li>
@@ -76,7 +76,7 @@ lit. b DSGVO — solange Google Play den Bestelldatensatz führt.</p>
 <tr><td>Athletendaten</td><td>Name, Körpergewicht (optional), Team (mit Farbe, Standard-Distanz und Freitext-Notizen), Startart, Lieblingsbahn, Block-Einstellungen, Führfuß; bei Athleten aus früheren Versionen auch Körper- und Schuhgröße (werden nicht mehr abgefragt, bleiben bis zur Bearbeitung gespeichert)</td><td>Zuordnung der Läufe; Berechnung von Kraft und Impuls (Gewicht)</td><td>Einwilligung, Art. 6 Abs. 1 lit. a; Körpergewicht ist ein Gesundheitsdatum, Art. 9 Abs. 2 lit. a DSGVO</td></tr>
 <tr><td>Videoaufnahmen</td><td>Start- und Zielvideos (Personen sichtbar; ohne Ton — die App nutzt das Mikrofon nicht)</td><td>Einzelbild-Analyse von Start, Schritten und Zieldurchlauf</td><td>In der Regel Einwilligung, Art. 6 Abs. 1 lit. a DSGVO (bei Vereinsmitgliedern ggf. lit. b/f — das entscheidest du als Verantwortlicher)</td></tr>
 <tr><td>Analyse-/Messdaten</td><td>Zeitpunkte, Geschwindigkeiten, Kräfte, Schrittdaten, die verfolgten Körperpunkte jedes Laufs (Hüfte, Schulter, Fuß, Körperschwerpunkt), Kalibrierung und Kameraneigung, Laufdistanz, optionale Kameraposition, Aufnahmezeit, Videodateinamen und der Name des Ziel-Handys</td><td>Anzeige, Speicherung und Export der Auswertung</td><td>Wie bei den Videoaufnahmen</td></tr>
-<tr><td>Geräteeinstellungen</td><td>App-Konfiguration, Name dieses Handys (Modell oder ein selbst gewählter Name), Pairing-Code, Pro-Kaufstatus, Zähler der Gratis-Läufe</td><td>Funktion der App</td><td>Auf dem Handy gespeichert; der Name dieses Handys wird an dein zweites Handy gesendet und dort bei jedem Lauf gespeichert, und er sowie der Pairing-Code sind Teil der Android-Sicherung (Abschnitt 5). Betrifft nur dich als Nutzer — keine Rechtsgrundlage gegenüber Dritten erforderlich (Kaufstatus: Abschnitt 6)</td></tr>
+<tr><td>Geräteeinstellungen</td><td>App-Konfiguration, Name dieses Handys (Modell oder ein selbst gewählter Name), Pairing-Code, Pro-Kaufstatus, Zähler der Gratis-Läufe</td><td>Funktion der App</td><td>Auf dem Handy gespeichert; der Name dieses Handys wird an dein zweites Handy gesendet, das Start-Handy speichert den Namen des Ziel-Handys bei jedem Lauf, und Name sowie Pairing-Code sind Teil der Android-Sicherung (Abschnitt 5). Betrifft nur dich als Nutzer — keine Rechtsgrundlage gegenüber Dritten erforderlich (Kaufstatus: Abschnitt 6)</td></tr>
 </tbody>
 </table>
 <p>Das Körpergewicht ist optional; ohne Angabe entfallen nur die massenabhängigen Werte (Kraft, Impuls).
@@ -89,7 +89,7 @@ bearbeitest oder löschst.</p>
 Handy. Videos werden in der Galerie des Handys gespeichert (Ordner <em>Movies/StartForce</em>), damit du sie
 wie jedes andere Video ansehen und verwalten kannst. Die Posen-Erkennung (MediaPipe) läuft vollständig
 offline auf dem Gerät. Außerdem hält die App ihre Diagnose-Logs, noch nicht übertragene Zielvideos und Kopien deiner
-Exporte (bis zu 24 Stunden) in ihrem privaten Speicher; auf Android 9 und älter landen die Videos im allgemeinen
+Exporte (bis zu 24 Stunden) in ihrem privaten Speicher; auf Android 8 und 9 landen die Videos im allgemeinen
 Video-Ordner des Handys statt in <em>Movies/StartForce</em>. Eine <strong>Speicherung auf Servern des Entwicklers
 findet nicht statt</strong>.</p>
 
@@ -111,16 +111,18 @@ Sicherung für den Ordner <em>Movies/StartForce</em>, wenn du das nicht möchtes
 <li><strong>Deine Exporte.</strong> PDF-Berichte, Rohdaten-CSV-Dateien, das Sicherungsarchiv der App
 (Einstellungen → Backup &amp; Restore) und die Diagnose-Logs (Hilfe → Crash Log / Sync Log; das Sync-Log kann
 die lokale IP-Adresse deines zweiten Handys enthalten) werden an die App übergeben, die du im
-Android-Teilen-Dialog wählst. Was dann damit passiert, liegt bei dir. PDF- und CSV-Dateinamen enthalten den Namen des
-Athleten. Exportierte Dateien werden von der App nicht verschlüsselt — bewahre sie entsprechend auf.</li>
+Android-Teilen-Dialog wählst. Was dann damit passiert, liegt bei dir. PDF-Berichte enthalten die Athletennamen, und der
+CSV-Dateiname (sowie der Dateiname eines Einzel-Athleten-PDFs) trägt den Namen des Athleten. Exportierte Dateien
+werden von der App nicht verschlüsselt — bewahre sie entsprechend auf.</li>
 <li><strong>Zwei-Handy-Zeitmessung.</strong> Das Zielvideo und die Angaben zu seiner Zuordnung (Laufnummer,
 Laufdistanz, Zeitsignale und der Name jedes Handys — das Handymodell oder der Name, den du unter Einstellungen →
-Name dieses Handys festlegst; keine Athletennamen) gehen direkt von einem Handy zum
+Two-Phone Finish → Name of this phone festlegst; keine Athletennamen) gehen direkt von einem Handy zum
 anderen, entweder über eine Wi-Fi-Direct-Verbindung oder über ein lokales WLAN, in dem beide Handys sind.
-Kein Server und kein Dritter ist beteiligt. Während einer Sitzung kündigt sich die App im lokalen Netz an
-(Dienstname, Port und ein zufälliges Sitzungs-Token), damit das andere Handy sie findet. Das andere Handy speichert den
-Namen deines Handys bei jedem Lauf, er landet also auch in dessen Sicherung, und das Ziel-Handy behält von jedem
-Zielvideo eine eigene Kopie in seiner Galerie. Über Wi-Fi Direct verschlüsselt Android die Verbindung (WPA2);
+Kein Server und kein Dritter ist beteiligt. Während einer Sitzung kündigt sich das Start-Handy (Dienstname, Port und
+ein zufälliges Sitzungs-Token) im WLAN bzw. über die Direktverbindung für Handys in Funkreichweite an, damit das
+Ziel-Handy es findet. Das Start-Handy speichert den Namen des Ziel-Handys bei jedem Lauf, er landet also in der
+Sicherung des Start-Handys; das Ziel-Handy behält von jedem Zielvideo eine eigene Kopie in seiner Galerie. Über
+Wi-Fi Direct verschlüsselt Android die Verbindung (WPA2);
 in einem gemeinsamen WLAN fügt die App keine eigene Verschlüsselung hinzu — die Daten sind dann nur so
 geschützt wie dieses Netz; vermeide offene oder öffentliche Netze. Ein optionaler Pairing-Code
 (Einstellungen) stellt sicher, dass sich nur Handys mit demselben Code verbinden — ohne Code kann sich jedes Handy mit
@@ -130,8 +132,8 @@ dieser App im selben Netz verbinden; der Code selbst wird nie im Klartext übert
 <h2>6. Google Play (optionaler Pro-Kauf)</h2>
 <p>Pro ist ein einmaliger Kauf, der über <strong>Google Play</strong> (im EWR: Google Commerce Ltd. / Google
 Ireland Ltd.; siehe Google-Play-Nutzungsbedingungen) abgewickelt wird und an das Google-Konto des Handys gebunden
-ist. Bei jedem App-Start sowie beim Tippen auf „Kaufen" bzw. „Kauf wiederherstellen" im Kaufdialog fragt die App
-bei Google Play ab, ob Pro freigeschaltet ist; dafür braucht die App
+ist. Bei jedem App-Start fragt die App bei Google Play ab, ob Pro freigeschaltet ist, und ruft den aktuellen Preis ab;
+„Kauf wiederherstellen" fragt erneut, „Kaufen" öffnet den Kaufdialog von Google Play; dafür braucht die App
 Internetzugang. Google sieht den Kauf und dein Google-Konto — nie deine Aufnahmen, Athleten oder
 Ergebnisse. Zahlungsdaten verarbeitet ausschließlich Google nach der
 <a href="https://policies.google.com/privacy">Datenschutzerklärung von Google</a>; der Entwickler erhält
@@ -175,7 +177,7 @@ Minderjähriger erfasst, gilt Abschnitt 9.</p>
 in der App löschen; (2) die Videos in der Galerie löschen (<em>Movies/StartForce</em>); (3) exportierte PDF-,
 CSV- oder Sicherungsdateien löschen; (4) falls die Android-Sicherung aktiv war, die Sicherungskopie der App
 unter Google One / Drive → Sicherungen löschen; (5) falls du ein zweites Handy als Zielkamera benutzt hast, dort
-ebenfalls die Zielvideos löschen (Galerie und die Warteliste der App). Die Deinstallation der App entfernt ihre Datenbank und
+ebenfalls die Zielvideos löschen (Galerie und Zielkamera → „Waiting to send"). Die Deinstallation der App entfernt ihre Datenbank und
 Einstellungen vom Handy, nicht aber die Videos in der Galerie, die exportierten Dateien oder die
 Google-Sicherungskopie.</p>
 
